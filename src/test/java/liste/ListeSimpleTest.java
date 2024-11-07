@@ -45,6 +45,13 @@ class ListeSimpleTest {
 
     @Test
      void toStringDonneTousLesNoeuds() {
+        // ajout d'elements dans la liste
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3);
+
+        String result = listeATester.toString();
+
         System.out.println(listeATester);
         listeATester.ajout(1);
         listeATester.ajout(2);
