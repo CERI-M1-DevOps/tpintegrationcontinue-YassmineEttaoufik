@@ -261,4 +261,27 @@ class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))",listeATester.toString());
     }
+
+    @Test
+    void modifiePremierElementNonTrouve() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.modifiePremier(3, 4);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());  // No change should occur
+    }
+
+    @Test
+    void modifiePremierListeVide() {
+        listeATester.modifiePremier(1, 4);
+        assertNull(listeATester.tete);
+    }
+
+    @Test
+    void modifiePremierElementTete() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.modifiePremier(1, 5);
+        assertEquals("ListeSimple(Noeud(2), Noeud(5))", listeATester.toString());
+        assertEquals(5, listeATester.tete.getElement());
+    }
 }
