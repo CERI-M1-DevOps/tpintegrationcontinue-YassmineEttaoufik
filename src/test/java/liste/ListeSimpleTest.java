@@ -276,5 +276,26 @@ class ListeSimpleTest {
         assertNull(listeATester.tete);  // List should remain empty
     }
 
+    @Test
+    void echangeMemeNoeud() {
+        listeATester.ajout(1);
+        Noeud r1 = listeATester.tete;
+        listeATester.echanger(r1, r1);
+        assertEquals("ListeSimple(Noeud(1))",listeATester.toString());
+    }
+    @Test
+    void echangeNoeudR2EstTete() {
+        listeATester.ajout(5);
+        listeATester.ajout(4);
+        listeATester.ajout(3);
+        Noeud r2 = listeATester.tete;
+        listeATester.ajout(2);
+        listeATester.ajout(1);
+        Noeud r1 = listeATester.tete.getSuivant();
+        assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4), Noeud(5))",listeATester.toString());
+        listeATester.echanger(r1, r2);
+        assertEquals("ListeSimple(Noeud(1), Noeud(3), Noeud(2), Noeud(4), Noeud(5))",listeATester.toString());
+    }
+
 
 }
