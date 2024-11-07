@@ -297,5 +297,21 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(1), Noeud(3), Noeud(2), Noeud(4), Noeud(5))",listeATester.toString());
     }
 
+    @Test
+    void supprimePremierElementNoNTrouve() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.supprimePremier(3);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());  // No change to the list
+    }
+
+    @Test
+    void supprimePremierListeVide() {
+        assertNull(listeATester.tete);
+        listeATester.supprimePremier(1);
+        assertNull(listeATester.tete);
+        assertEquals(0, listeATester.getSize());
+    }
+
 
 }
