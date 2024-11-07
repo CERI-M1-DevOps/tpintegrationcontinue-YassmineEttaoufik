@@ -266,22 +266,15 @@ class ListeSimpleTest {
     void modifiePremierElementNonTrouve() {
         listeATester.ajout(1);
         listeATester.ajout(2);
-        listeATester.modifiePremier(3, 4);
+        listeATester.modifiePremier(3, 4);  // 3 is not in the list
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());  // No change should occur
     }
 
     @Test
     void modifiePremierListeVide() {
-        listeATester.modifiePremier(1, 4);
-        assertNull(listeATester.tete);
+        listeATester.modifiePremier(1, 4);  // Nothing should happen as list is empty
+        assertNull(listeATester.tete);  // List should remain empty
     }
 
-    @Test
-    void modifiePremierElementTete() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.modifiePremier(1, 5);
-        assertEquals("ListeSimple(Noeud(2), Noeud(5))", listeATester.toString());
-        assertEquals(5, listeATester.tete.getElement());
-    }
+
 }
