@@ -65,6 +65,7 @@ public class ListeSimple {
 
     public void supprimeTous(int element) {
        tete = supprimeTousRecurs(element, tete);
+
     }
 
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
