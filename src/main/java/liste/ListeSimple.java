@@ -17,6 +17,7 @@ public class ListeSimple {
      * @param element L'élément à ajouter.
      */
     public void ajout(int element) {
+
         tete = new Noeud(element, tete);
         size++;
     }
