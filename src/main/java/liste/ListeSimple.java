@@ -4,10 +4,18 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * renvoie la taille de la liste.
+     * @return la taille de la liste
+     */
     public long getSize() {
         return size;
     }
 
+    /**
+     * Ajoute un élément à la liste.
+     * @param element L'élément à ajouter.
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
@@ -43,6 +51,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Supprime le premier nœud de la liste contenant l'élément spécifié.
+     * @param element L'élément à supprimer.
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
