@@ -307,7 +307,7 @@ class ListeSimpleTest {
 
     @Test
     void supprimePremierListeVide2() {
-        listeAtester=new ListeSimple();
+        listeATester=new ListeSimple();
         listeATester.supprimePremier(1);
         assertNull(listeATester.tete);
     }
